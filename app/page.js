@@ -13,7 +13,7 @@ export default function Home() {
       image: "/SmartRose.jpeg",
     },
     {
-      title: "CHATAUDIO",
+      title: "CHAT AUDIO",
       description:
         "Generating music, sound effects and piano covers using diffusion & transformer A.I models (startup).",
       image: "/ChatAudio.jpeg",
@@ -284,10 +284,10 @@ export default function Home() {
           I&apos;m a web and app developer.
         </h1>
         <button
-          onClick={(e) => handleScroll(e, "projects")}
+          onClick={(e) => handleScroll(e, "about")}
           className="flex justify-center items-center border-4 border-white w-[70%] md:w-[40%] h-[72px] rounded-full mt-12 hover:bg-[#c1d5f4] transition duration-300 z-10"
         >
-          <h2 className="text-white text-2xl font-bold">View my work</h2>
+          <h2 className="text-white text-2xl font-bold">Find out more</h2>
         </button>
       </div>
 
@@ -338,8 +338,17 @@ export default function Home() {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="py-20 px-4 bg-[#f8e5a6]">
+      <section
+        id="resume"
+        className="py-20 px-4 bg-[#f8e5a6] flex flex-col items-center justify-center"
+      >
         <h2 className="text-6xl font-bold text-center mb-8">Resume</h2>
+        <Image
+          src="/resume.jpeg"
+          width={480}
+          height={200}
+          className="rounded-2xl mb-4 self-center"
+        />
         <div className="max-w-3xl mx-auto text-lg text-center">
           <p>
             Download my resume to see my professional experience, education, and
@@ -347,7 +356,7 @@ export default function Home() {
           </p>
           <div className="text-center mt-6">
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 border-4 border-[#5a3e36] rounded-full text-[#5a3e36] font-semibold hover:bg-[#c1d5f4] hover:text-white transition duration-300"
@@ -378,6 +387,17 @@ export default function Home() {
             </p>
             <p>
               Phone: <span className="text-[#639cd9]">201-968-7506</span>
+            </p>
+            <p>
+              LinkedIn:{" "}
+              <a
+                href="https://www.linkedin.com/in/johnny-vishnevskiy-29782919a/"
+                className="text-[#639cd9]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Johnny Vishnevskiy
+              </a>
             </p>
           </div>
         </div>
