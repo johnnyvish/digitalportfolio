@@ -278,9 +278,10 @@ export default function Home() {
         ))}
 
         <h1 className="text-4xl md:text-7xl text-white font-bold text-center mt-24 z-10">
-          Hello, I'm <span className="text-[#FFE103]">Johnny Vishnevskiy</span>.
+          Hello, I&apos;m{" "}
+          <span className="text-[#FFE103]">Johnny Vishnevskiy</span>.
           <br />
-          I'm a web and app developer.
+          I&apos;m a web and app developer.
         </h1>
         <button
           onClick={(e) => handleScroll(e, "projects")}
@@ -362,8 +363,8 @@ export default function Home() {
         <h2 className="text-6xl font-bold text-center mb-8">Contact</h2>
         <div className="max-w-3xl mx-auto text-lg text-center">
           <p>
-            Feel free to reach out if you're looking for a passionate developer,
-            have a question, or just want to connect.
+            Feel free to reach out if you&apos;re looking for a passionate
+            developer, have a question, or just want to connect.
           </p>
           <div className="mt-6">
             <p>
