@@ -343,12 +343,6 @@ export default function Home() {
         className="py-20 px-4 bg-[#f8e5a6] flex flex-col items-center justify-center"
       >
         <h2 className="text-6xl font-bold text-center mb-8">Resume</h2>
-        <Image
-          src="/resume.jpeg"
-          width={480}
-          height={200}
-          className="rounded-2xl mb-4 self-center"
-        />
         <div className="max-w-3xl mx-auto text-lg text-center">
           <p>
             Download my resume to see my professional experience, education, and
