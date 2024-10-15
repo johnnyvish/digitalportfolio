@@ -9,25 +9,26 @@ export default function Home() {
   const projects = [
     {
       title: "SMART ROSE",
-      description: "Smart health tools to help people live longer (startup).",
+      description:
+        "Smart health tools to help people live longer (startup). Our technology integrates weekly biometric measurements with machine learning algorithms to provide personalized health insights and coaching. We've successfully launched a working product, including a custom smart ring for real-time health monitoring, and have a small but dedicated user base.",
       image: "/SmartRose.jpeg",
     },
     {
       title: "CHAT AUDIO",
       description:
-        "Generating music, sound effects and piano covers using diffusion & transformer A.I models (startup).",
+        "Generating music, sound effects and piano covers using diffusion & transformer A.I models (startup). We've developed proprietary algorithms that understand musical structure and emotion, resulting in high-quality, royalty-free audio generation.",
       image: "/ChatAudio.jpeg",
     },
     {
       title: "CITEBOT",
       description:
-        "A medical chatbot researcher with citations (Retrieval-Augmented generation).",
+        "A medical chatbot researcher with citations (Retrieval-Augmented generation). This AI-powered tool assists healthcare professionals and researchers by providing quick, accurate medical information with proper citations. It leverages a vast database of peer-reviewed medical literature and uses advanced natural language processing to understand complex queries.",
       image: "/CiteBot.jpeg",
     },
     {
       title: "CHORD WIZ",
       description:
-        "A functional ear trainer web app for musicians, focused on chord recognition. Made it for myself and friends after struggling to find a solution.",
+        "A functional ear trainer web app for musicians, focused on chord recognition. Made it for myself and friends after struggling to find a solution. The app features custom drones, instruments and a user-friendly interface.",
       image: "/ChordWiz.jpeg",
     },
   ];
@@ -106,7 +107,7 @@ export default function Home() {
     e.preventDefault();
     const element =
       target === "hero" ? document.body : document.getElementById(target);
-    const yOffset = target === "hero" ? 0 : -80;
+    const yOffset = 0;
     const yPosition =
       element.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({
@@ -343,7 +344,14 @@ export default function Home() {
         className="py-20 px-4 bg-[#f8e5a6] flex flex-col items-center justify-center"
       >
         <h2 className="text-6xl font-bold text-center mb-8">Resume</h2>
-        <div className="max-w-3xl mx-auto text-lg text-center">
+        <div className="max-w-3xl mx-auto text-lg text-center flex flex-col justify-center items-center">
+          <Image
+            src={"/Resume.jpeg"}
+            alt={"Resume"}
+            width={360}
+            height={100}
+            className="rounded-2xl mb-4"
+          />
           <p>
             Download my resume to see my professional experience, education, and
             skills in detail.
