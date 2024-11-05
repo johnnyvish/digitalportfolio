@@ -33,8 +33,25 @@ export default function Home() {
     },
   ];
 
-  // Array to hold cloud data
+  // Slideshow images
+  const slideshowImages = [
+    {
+      src: "/RoseBoxes.png",
+      description: "Opening our shipped custom smart rings",
+    },
+    {
+      src: "/LookUp.png",
+      description: "First time doing 3D web development",
+    },
+    {
+      src: "/LogicPro.png",
+      description: "First time making music in Logic Pro",
+    },
+  ];
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array to hold cloud data
   const cloudData = [
     {
       top: "10%",
@@ -129,7 +146,26 @@ export default function Home() {
         yoyo: true,
       });
     });
-  }, [cloudData]);
+
+    // Slideshow interval
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % slideshowImages.length
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Add Twitter script
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className="bg-[#f8e5a6] min-h-screen w-full text-[#5a3e36] font-serif">
@@ -169,6 +205,13 @@ export default function Home() {
                   className="hover:text-[#639cd9] transition duration-300"
                 >
                   Resume
+                </a>
+                <a
+                  href="#favorites"
+                  onClick={(e) => handleScroll(e, "favorites")}
+                  className="hover:text-[#639cd9] transition duration-300"
+                >
+                  Favorites
                 </a>
                 <a
                   href="#contact"
@@ -242,6 +285,13 @@ export default function Home() {
                 Resume
               </a>
               <a
+                href="#favorites"
+                onClick={(e) => handleScroll(e, "favorites")}
+                className="block px-3 py-2 rounded-md hover:text-[#639cd9] transition duration-300"
+              >
+                Favorites
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => handleScroll(e, "contact")}
                 className="block px-3 py-2 rounded-md hover:text-[#639cd9] transition duration-300"
@@ -305,10 +355,10 @@ export default function Home() {
           />
           <p className="text-2xl md:w-1/2">
             I have a passion for consumer-facing app development, artificial
-            intelligence and startups. <br /> <br />
-            My goal is to leverage A.I to dramatically impact the world. This
-            portfolio showcases my journey as a full-stack developer, machine
-            learning enthusiast, and startup co-founder.
+            intelligence, and startups.
+            <br /> <br />
+            This portfolio showcases my journey as a full-stack developer,
+            machine learning enthusiast, and startup co-founder.
           </p>
         </div>
       </section>
@@ -366,6 +416,72 @@ export default function Home() {
               Download Resume
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Favorites Section */}
+      <section id="favorites" className="py-20 px-4 bg-[#d5c1f4]">
+        <h2 className="text-6xl font-bold text-center mb-8">Favorite Media</h2>
+
+        {/* Video Section */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div
+            className="relative"
+            style={{
+              paddingBottom: "56.25%",
+              height: 0,
+              overflow: "hidden",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/evQsOFQju08"
+              title="Inspirational Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: 32,
+              }}
+            ></iframe>
+          </div>
+          <p className="text-xl mt-4">
+            Vsauce was my introduction to the magnificent concept of questioning
+            everything.
+          </p>
+        </div>
+
+        {/* Audio Section */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <h3 className="text-4xl font-bold mb-4">Mystery - Matt Maltese</h3>
+          <audio controls className="w-full">
+            <source src="mystery.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p className="text-xl mt-4">
+            I listened to this song over 40 times in a row when I first heard
+            it.
+          </p>
+        </div>
+
+        {/* Slideshow Section */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="relative w-full h-[30vw] overflow-hidden mb-4">
+            <Image
+              src={slideshowImages[currentImageIndex].src}
+              alt="Slideshow Image"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-2xl"
+            />
+          </div>
+          <p className="text-xl text-center">
+            {slideshowImages[currentImageIndex].description}
+          </p>
         </div>
       </section>
 
