@@ -459,7 +459,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto mb-12">
           <h3 className="text-4xl font-bold mb-4">Mystery - Matt Maltese</h3>
           <audio controls className="w-full">
-            <source src="mystery.mp3" type="audio/mpeg" />
+            <source src="Mystery.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
           <p className="text-xl mt-4">
@@ -470,7 +470,7 @@ export default function Home() {
 
         {/* Slideshow Section */}
         <div className="max-w-3xl mx-auto mb-12">
-          <div className="relative w-full h-[30vw] overflow-hidden mb-4">
+          <div className="relative w-full h-[50vh] overflow-hidden mb-4">
             <Image
               src={slideshowImages[currentImageIndex].src}
               alt="Slideshow Image"
