@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import Comments from "./Comments";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +38,7 @@ export default function Home() {
   const slideshowImages = [
     {
       src: "/RoseBoxes.png",
-      description: "Opening our shipped custom smart rings",
+      description: "Shipping smart rings to users",
     },
     {
       src: "/LookUp.png",
@@ -157,14 +158,6 @@ export default function Home() {
     return () => {
       clearInterval(interval);
     };
-  }, []);
-
-  useEffect(() => {
-    // Add Twitter script
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    document.body.appendChild(script);
   }, []);
 
   return (
@@ -519,6 +512,7 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <Comments />
       </section>
     </div>
   );
